@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="469336660029-949v0f514u25dhhceq1ugs7q0ubtqp6v.apps.googleusercontent.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthenticationPage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css_js/AuthPage.css">
+    <style>
+      html {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
+.outer_block {
+  display: flex;
+  justify-content: center;
+}
+.middle_block {
+  background-color: #fff;
+  margin-top: 3%;
+  display: flex;
+  padding: 2px 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  box-shadow: 1px 0px 10px black;
+}
+.block_1 {
+  margin-right: 4rem;
+}
+.passsword_section {
+  display: flex;
+}
+.password_input {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.passsword_section button {
+  border-right: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid #ced4da;
+  /* border-radius: 0.25rem; */
+  background-color: #fff;
+}
+.inner_block {
+  transition: all;
+  transition-duration: 2s;
+}
+.inner_block_1 {
+  opacity: 0;
+}
+.inner_block_2 {
+  opacity: 0;
+}
+.company1 {
+  margin-left: -8%;
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: cursive;
+}
+.company2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -6%;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: cursive;
+}
+.company .company_logo {
+  margin-right: 2px;
+  font-size: 2rem;
+}
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 0px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.fa-battle-net:before {
+  color: #a770ef;
+  font-size: xx-large;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-family: cursive;
+  margin-bottom: 0.5rem;
+}
+.text1 {
+  font-size: 9px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: lightslategrey;
+}
+.input_block {
+  margin-bottom: 8%;
+}
+.text2 {
+  margin-bottom: 4%;
+  color: gray;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+.signbutton_div {
+  display: flex;
+  justify-content: center;
+}
+.signbutton_div button {
+  border: none;
+  padding: 1px 1.2rem;
+  border-radius: 12px;
+  color: black;
+  background-color: #fdb99b;
+}
+.loginlogo {
+  color: #a770ef;
+  transition: all;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.inputlogo {
+  color: #fdb99b;
+}
+.loginlogo:hover {
+  transform: scale(1.6);
+}
+.signbutton_div button:hover {
+  color: white;
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  box-shadow: 0px 0px 8px black;
+}
+form {
+  font-family: cursive;
+}
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.g-signin2 {
+  box-shadow: none;
+}
+.g-signin2 span {
+  display: none;
+}
+
+.logo button {
+  display: contents;
+  background-color: #7fffd400;
+  border: none;
+  outline: none;
+}
+.absolute_block {
+  background: linear-gradient(to right, #f2709c, #ff9472);
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1%;
+  transition: all;
+  transition-duration: 1.5s;
+  color: white;
+  box-shadow: 0px 1px 10px black;
+}
+button {
+  outline: none;
+}
+.absolute_block_shift {
+  left: 0%;
+}
+.absolute_block button {
+  padding: 1px 1.2rem;
+  border: 4px solid white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: cursive;
+  color: white;
+}
+.absolute_block button:hover {
+  box-shadow: 0px 0px 8px black;
+}
+.absolute_heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 5%;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 700px) {
+  .middle_block {
+    width: 95vw;
+  }
+  /* .signbutton_div button {
+    border-radius: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 3px 2.2rem;
+  } */
+}
+@media only screen and (max-width: 445px) {
+  .middle_block {
+    display: flex;
+    flex-direction: column;
+  }
+  .block_1 {
+    margin-right: 0;
+  }
+  .inner_block_1 {
+    z-index: -1;
+  }
+  .block_2 {
+    position: absolute;
+    left: 8%;
+    margin-left: 0rem;
+  }
+  .inner_block_2 {
+    left: 100%;
+    transition: all;
+    transition-duration: 2s;
+  }
+  .company1 {
+    margin-left: -2%;
+  }
+  .company2 {
+    margin-right: 0rem;
+  }
+  .heading {
+    letter-spacing: 2px;
+  }
+  .absolute_block {
+    height: 7rem;
+    width: 100%;
+    left: 0%;
+    top: 100%;
+    animation: animates 2s linear;
+  }
+  @keyframes animates {
+    50% {
+      top: 0;
+      height: 120%;
+    }
+  }
+  .absolute_heading {
+    margin-bottom: -1%;
+    margin-top: -3%;
+  }
+  .absolute_para {
+    display: none;
+  }
+  .absolute_block_shift {
+    animation: animate 2s linear;
+  }
+  /* top:0; height:100% */
+  @keyframes animate {
+    50% {
+      top: 0;
+      height: 120%;
+    }
+  }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <i class="fas fa-lock"></i></i>
+          <a id="navbarContent" class="navbar-brand"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">M E N U</h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body offcanvas-dark bg-dark">
+              <p class="text-light" >NOTHING TO SEE HERE.....</p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="outer_block">
+        <div class="middle_block">
+            <div id="block_1" class="inner_block block_1">
+                <div class="company1">
+                    <div class="company_logo" title="Company Logo"><i class="fab fa-battle-net"></i></div>
+                    <div class="company_name" title="Company Name">User Authentication</div>
+                </div>
+                <div  class="heading">SIGN IN</div>
+                <%if(message!="") {%>
+                <div id="warning_1" class="warning alert ">
+                  <%= message %>
+                </div>    
+                <%}%>
+                <div class="logo">
+                  <!-- <div style="width: 20px;padding: 0px;box-shadow: none;height: 20px;border-radius: 20px;" class="g-signin2 loginlogo" data-onsuccess="onSignIn"></div> -->
+                  <button  type="#"><i class="fab loginlogo fa-google"></i></button>
+                  <button type="#"><i class="fab loginlogo fa-github"></i></button>
+                  <button type="#"><i class="fab loginlogo fa-linkedin-in"></i></button>
+                  <button type="#"><i class="fab loginlogo fa-instagram"></i></button>
+                </div>
+                <div class="text1">Fill your Account details</div>
+                <form method="POST" action="/Login">
+                <div class="input_block">
+                  <div class="form-floating mb-3">
+                    <input type="email" autocomplete="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
+                    <label for="floatingInput"><i class="fas inputlogo fa-at"></i>Email address</label>
+                  </div>
+                  <div class="form-floating passsword_section">
+                    <input type="password" autocomplete="current-password" class="form-control password_input" id="LoginUserPassword" placeholder="Password" name="password" required><button onclick="PasswordVisibleLogin()"  class="eyeButton" type="button"><i id="EyeButton1" class="fas fa-eye"></i></button>
+                    <label for="floatingPassword"><i class="fas inputlogo fa-key"></i>Password</label>
+                  </div>
+                </div>
+                <div class="text2">Forgot Your Password ?</div>
+                <div class="signbutton_div"><button type="submit">SIGN IN</button></div>
+              </form>
+            </div>
+            <div class="absolute_block">
+              <div class="absolute_heading">HELLO, FRIENDS!</div>
+              <p class="absolute_para">Enter your personal details and start your journey,with us</p>
+              <div><button class="Shift" type="button">SIGN UP</button></div>
+            </div>
+            <div id="block_2" class="inner_block block_2 inner_block_2">
+              <div class="company2">
+                
+                <div class="company_name" title="Company Name">User Authentication</div>
+                <div class="company_logo" title="Company Logo"><i class="fab fa-battle-net"></i></div>
+              </div>
+              <div class="heading">CREATE ACCOUNT</div>
+            
+              <form method="POST" action="/">
+              <div class="input_block">
+                <div class="form-floating mb-3">
+                  <input type="text" autocomplete="name" class="form-control" id="floatingInput" placeholder="name" name="name" required>
+                  <label for="floatingInput"><i class="fas inputlogo fa-signature"></i>Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" autocomplete="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
+                  <label for="floatingInput"><i class="fas inputlogo fa-at"></i>Email address</label>
+                </div>
+                <div class="form-floating passsword_section">
+                  <input type="password" class="form-control"  autocomplete="current-password" id="CreateUserPassword" placeholder="Password" name="password" required>
+                  <button onclick="passwordvisiblecreate()" class="eyeButton" type="button">
+                    <i id="EyeButton" class="fas fa-eye"></i>
+                  </button>
+                  <label for="floatingPassword"><i class="fas inputlogo fa-key"></i>Password</label>
+                </div>
+              </div>
+              <div class="signbutton_div"><button type="submit">SIGN UP</button></div>
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+<script>
+  var absolute_heading = document.querySelector(".absolute_heading");
+var absolute_para = document.querySelector(".absolute_para");
+var shiftButton = document.querySelector(".Shift");
+var block_1 = document.querySelector("#block_1");
+var block_2 = document.querySelector("#block_2");
+let SignUpMessage = document.getElementById("Signupmessage");
+let LoginUserPassword = document.getElementById("LoginUserPassword");
+let EyeButton = document.getElementById("EyeButton");
+let EyeButton_1 = document.getElementById("EyeButton1");
+let createUserPassword = document.getElementById("CreateUserPassword");
+
+document.querySelector(".Shift").addEventListener("click", function () {
+  document
+    .querySelector(".absolute_block")
+    .classList.toggle("absolute_block_shift");
+  if (
+    document.querySelector(".absolute_block").className ==
+    "absolute_block absolute_block_shift"
+  ) {
+    block_1.classList.add("inner_block_1");
+    block_2.classList.remove("inner_block_2");
+    absolute_heading.innerHTML = "GET STARTED,";
+    absolute_para.innerHTML = "Create your Account & Enjoy our service";
+    shiftButton.innerHTML = "SIGN IN";
+  } else {
+    block_1.classList.remove("inner_block_1");
+    block_2.classList.add("inner_block_2");
+    absolute_heading.innerHTML = "HELLO, FRIENDS !";
+    absolute_para.innerHTML =
+      "Enter your personal details and start your journey,with us";
+    shiftButton.innerHTML = "SIGN UP";
+  }
+});
+function passwordvisiblecreate() {
+  if (createUserPassword.type === "password") {
+    EyeButton.classList.remove("fa-eye");
+    EyeButton.classList.add("fa-eye-slash");
+    createUserPassword.type = "text";
+  } else {
+    EyeButton.classList.remove("fa-eye-slash");
+    EyeButton.classList.add("fa-eye");
+    createUserPassword.type = "password";
+  }
+}
+function PasswordVisibleLogin() {
+  if (LoginUserPassword.type === "password") {
+    EyeButton1.classList.remove("fa-eye");
+    EyeButton1.classList.add("fa-eye-slash");
+    LoginUserPassword.type = "text";
+  } else {
+    EyeButton1.classList.remove("fa-eye-slash");
+    EyeButton1.classList.add("fa-eye");
+    LoginUserPassword.type = "password";
+  }
+}
+
+const warning1 = document.getElementById("warning_1");
+if (
+  warning1.innerText == "Invalid UserEmail/Password" ||
+  warning1.innerText == "Email already exist."
+) {
+  if (warning1.classname == "warning1 alert alert-success") {
+    warning1.classList.remove("alert-success");
+  }
+  warning1.classList.add("alert-danger");
+  warning1.style.color = "red";
+} else {
+  if (warning1.classname == "warning1 alert alert-danger") {
+    warning1.classList.remove("alert-danger");
+  }
+  warning1.classList.add("alert-success");
+  warning1.style.color = "#3df58a";
+}
+
+</script>
+<script src="/public/css_js/AuthPage.js"></script>
+</html>

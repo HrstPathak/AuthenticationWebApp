@@ -1,0 +1,263 @@
+html {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
+.outer_block {
+  display: flex;
+  justify-content: center;
+}
+.middle_block {
+  background-color: #fff;
+  margin-top: 3%;
+  display: flex;
+  padding: 2px 1.5rem 1.5rem 1.5rem;
+  position: relative;
+  box-shadow: 1px 0px 10px black;
+}
+.block_1 {
+  margin-right: 4rem;
+}
+.passsword_section {
+  display: flex;
+}
+.password_input {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.passsword_section button {
+  border-right: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  border: 1px solid #ced4da;
+  /* border-radius: 0.25rem; */
+  background-color: #fff;
+}
+.inner_block {
+  transition: all;
+  transition-duration: 2s;
+}
+.inner_block_1 {
+  opacity: 0;
+}
+.inner_block_2 {
+  opacity: 0;
+}
+.company1 {
+  margin-left: -8%;
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: cursive;
+}
+.company2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -6%;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: cursive;
+}
+.company .company_logo {
+  margin-right: 2px;
+  font-size: 2rem;
+}
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 0px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+.fa-battle-net:before {
+  color: #a770ef;
+  font-size: xx-large;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-family: cursive;
+  margin-bottom: 0.5rem;
+}
+.text1 {
+  font-size: 9px;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  color: lightslategrey;
+}
+.input_block {
+  margin-bottom: 8%;
+}
+.text2 {
+  margin-bottom: 4%;
+  color: gray;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: center;
+}
+.signbutton_div {
+  display: flex;
+  justify-content: center;
+}
+.signbutton_div button {
+  border: none;
+  padding: 1px 1.2rem;
+  border-radius: 12px;
+  color: black;
+  background-color: #fdb99b;
+}
+.loginlogo {
+  color: #a770ef;
+  transition: all;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+.inputlogo {
+  color: #fdb99b;
+}
+.loginlogo:hover {
+  transform: scale(1.6);
+}
+.signbutton_div button:hover {
+  color: white;
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  box-shadow: 0px 0px 8px black;
+}
+form {
+  font-family: cursive;
+}
+.logo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.g-signin2 {
+  box-shadow: none;
+}
+.g-signin2 span {
+  display: none;
+}
+
+.logo button {
+  display: contents;
+  background-color: #7fffd400;
+  border: none;
+  outline: none;
+}
+.absolute_block {
+  background: linear-gradient(to right, #f2709c, #ff9472);
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 1%;
+  transition: all;
+  transition-duration: 1.5s;
+  color: white;
+  box-shadow: 0px 1px 10px black;
+}
+button {
+  outline: none;
+}
+.absolute_block_shift {
+  left: 0%;
+}
+.absolute_block button {
+  padding: 1px 1.2rem;
+  border: 4px solid white;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: cursive;
+  color: white;
+}
+.absolute_block button:hover {
+  box-shadow: 0px 0px 8px black;
+}
+.absolute_heading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 5%;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 700px) {
+  .middle_block {
+    width: 95vw;
+  }
+  /* .signbutton_div button {
+    border-radius: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 3px 2.2rem;
+  } */
+}
+@media only screen and (max-width: 445px) {
+  .middle_block {
+    display: flex;
+    flex-direction: column;
+  }
+  .block_1 {
+    margin-right: 0;
+  }
+  .inner_block_1 {
+    z-index: -1;
+  }
+  .block_2 {
+    position: absolute;
+    left: 8%;
+    margin-left: 0rem;
+  }
+  .inner_block_2 {
+    left: 100%;
+    transition: all;
+    transition-duration: 2s;
+  }
+  .company1 {
+    margin-left: -2%;
+  }
+  .company2 {
+    margin-right: 0rem;
+  }
+  .heading {
+    letter-spacing: 2px;
+  }
+  .absolute_block {
+    height: 7rem;
+    width: 100%;
+    left: 0%;
+    top: 100%;
+    animation: animates 2s linear;
+  }
+  @keyframes animates {
+    50% {
+      top: 0;
+      height: 120%;
+    }
+  }
+  .absolute_heading {
+    margin-bottom: -1%;
+    margin-top: -3%;
+  }
+  .absolute_para {
+    display: none;
+  }
+  .absolute_block_shift {
+    animation: animate 2s linear;
+  }
+  /* top:0; height:100% */
+  @keyframes animate {
+    50% {
+      top: 0;
+      height: 120%;
+    }
+  }
+}
